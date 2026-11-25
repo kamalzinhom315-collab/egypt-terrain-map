@@ -805,6 +805,12 @@ dialog#credits h3{margin:0 0 10px}dialog#credits .x{position:absolute;top:10px;i
 .hero.sv{background:#0b1f1c}
 .hero.sv .v360{bottom:14px;inset-inline-start:auto;inset-inline-end:auto;left:12px;pointer-events:auto}
 .e360 iframe{background:#000}
+
+.hero.sv{height:min(94vw,420px)}
+.hero.sv #viewer{inset:46px 0 84px 0}
+.hero.sv .hero-title{display:block;height:auto;bottom:48px;inset-inline:14px}
+.hero.sv .hero-title h2{font-size:1.15rem}
+.hero.sv .v360{bottom:12px;left:auto;right:14px;inset-inline-start:auto;inset-inline-end:auto}
 </style>
 </head>
 <body>
@@ -1018,7 +1024,7 @@ function show(id){
   centerOn(f);
   history.replaceState(null,'','#'+id);
 }
-const E360={nile:['24.0830,32.8870','فلوكة في النيل عند أسوان (قرب فندق أولد كاتاراكت)'],sinai:['28.5392,33.9750','قمة جبل موسى'],white:['27.0580,27.9700','صحراء الفرافرة، قرب الصحراء البيضاء'],siwa:['29.2032,25.5195','صحراء سيوة'],redsea:['27.2400,33.8300','الغردقة على ساحل البحر الأحمر']};
+const E360={nile:['24.0830,32.8870','فلوكة في النيل عند أسوان (قرب فندق أولد كاتاراكت)'],sinai:['28.5392,33.9750','قمة جبل موسى'],white:['27.0580,27.9700','صحراء الفرافرة، قرب الصحراء البيضاء'],redsea:['28.5720,34.5370','البلو هول، دهب، على خليج العقبة (البحر الأحمر)']};
 let use360=true;
 function setViewer(f){
   const v=$('viewer'),bd=$('viewer-badge');
