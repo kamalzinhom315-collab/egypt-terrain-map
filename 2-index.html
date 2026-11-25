@@ -794,6 +794,23 @@ dialog#credits h3{margin:0 0 10px}dialog#credits .x{position:absolute;top:10px;i
 }
 
 .e360{position:absolute;inset:0;background:#000}.e360 iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.v360{position:absolute;bottom:12px;inset-inline-start:12px;z-index:5;background:rgba(0,0,0,.6);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;font:inherit;font-size:.72rem;padding:5px 12px}
+
+.hero.sv{aspect-ratio:auto;height:min(62vw,340px)}
+.hero.sv .hero-fade{display:none}
+.hero.sv #viewer{inset:0 0 54px 0}
+.hero.sv .hero-title{inset-inline:14px;bottom:8px;height:40px;display:flex;align-items:center;justify-content:space-between}
+.hero.sv .hero-title #d-kind,.hero.sv .hero-title #d-en{display:none}
+.hero.sv .hero-title h2{font-size:1.2rem;margin:0}
+.hero.sv .hero-title{background:none}
+.hero.sv{background:#0b1f1c}
+.hero.sv .v360{bottom:14px;inset-inline-start:auto;inset-inline-end:auto;left:12px;pointer-events:auto}
+.e360 iframe{background:#000}
+
+.hero.sv{height:min(94vw,420px)}
+.hero.sv #viewer{inset:46px 0 84px 0}
+.hero.sv .hero-title{display:block;height:auto;bottom:48px;inset-inline:14px}
+.hero.sv .hero-title h2{font-size:1.15rem}
+.hero.sv .v360{bottom:12px;left:auto;right:14px;inset-inline-start:auto;inset-inline-end:auto}
 </style>
 </head>
 <body>
@@ -999,7 +1016,7 @@ function show(id){
   c.append(' — المصوّر: '+f.author+' — الترخيص: ');
   if(f.license_url){const l=document.createElement('a');l.href=f.license_url;l.target='_blank';l.rel='noopener';l.textContent=f.license;c.append(l)}else c.append(f.license);
   c.append(' — المصدر: ويكيميديا كومنز');
-  {const e=E360[f.id];if(e){c.append(document.createElement('br'));c.append('بانوراما 360°: ');const a2=document.createElement('a');a2.href='https://www.360cities.net/image/'+e[0];a2.target='_blank';a2.rel='noopener';a2.textContent=e[1];c.append(a2);c.append(' — المصوّر: '+e[2]+' — عبر 360Cities.net (للاستخدام غير التجاري)')}}
+  {const e=E360[f.id];if(e){c.append(document.createElement('br'));c.append('منظر 360° (Google Street View): ');const a2=document.createElement('a');a2.href='https://www.google.com/maps/@?api=1&map_action=pano&viewpoint='+e[0];a2.target='_blank';a2.rel='noopener';a2.textContent=e[1];c.append(a2);c.append(' — © Google وأصحاب الصور المنشورة (الاسم يظهر داخل العارض)')}}
   setViewer(f);
   audio.src=f.audio[voice];$('seek').value=0;$('time').textContent='0:00';playIc.setAttribute('d',PLAY);
   audio.play().catch(()=>{});
@@ -1007,7 +1024,7 @@ function show(id){
   centerOn(f);
   history.replaceState(null,'','#'+id);
 }
-const E360={nile:['felucca-sailing-on-the-river-nile','Felucca sailing on the river Nile','Foto360'],sinai:['st-catherine-ascending-mount-sinai-egypt','St Catherine, ascending Mount Sinai','Salma El Dardiry'],white:['white-desert-egypt','White desert','Rahim Hamada (deja-view.org)'],eastern:['jabal-qattar-massif-eastern-desert-egypt','Jabal Qattar massif, Eastern Desert','Matjaz Kacicnik'],redsea:['promenade-hurghada-redsea-egypt','Promenade, Hurghada, Red Sea','Remo Pinana'],siwa:['siwa-lake-egypt','Siwa Lake','Rahim Hamada (deja-view.org)']};
+const E360={nile:['24.0830,32.8870','فلوكة في النيل عند أسوان (قرب فندق أولد كاتاراكت)'],sinai:['28.5392,33.9750','قمة جبل موسى'],white:['27.0580,27.9700','صحراء الفرافرة، قرب الصحراء البيضاء'],siwa:['29.2032,25.5195','صحراء سيوة'],redsea:['27.2400,33.8300','الغردقة على ساحل البحر الأحمر']};
 let use360=true;
 function setViewer(f){
   const v=$('viewer'),bd=$('viewer-badge');
@@ -1015,19 +1032,16 @@ function setViewer(f){
   v.innerHTML='';bd.style.opacity=1;
   const sw=$('v360');if(sw)sw.hidden=true;
   const e=E360[f.id];
+  const hero=v.parentNode;hero.classList.remove('sv');bd.style.display='';
   if(e&&use360){
+    hero.classList.add('sv');bd.style.display='none';
     const box=document.createElement('div');box.className='e360';
-    box.innerHTML='<iframe src="https://www.360cities.net/embed_iframe/'+e[0]+'" width="425" height="315" frameborder="0" bgcolor="#000000" target="_blank" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>';
+    box.innerHTML='<iframe src="https://www.google.com/maps?q=&layer=c&cbll='+e[0]+'&cbp=11,0,0,0,0&output=svembed" frameborder="0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
     v.appendChild(box);
-    const fr=box.firstChild;let ok=false;
-    fr.addEventListener('load',()=>{ok=true});
-    const fb=()=>{if(cur&&cur.id===f.id&&!ok){use360=false;setViewer(f);use360=true}};
-    setTimeout(fb,15000);
-    bd.textContent='360° حقيقية: اسحب بإصبعك للدوران';setTimeout(()=>bd.style.opacity=0,5000);
-    const b=$('v360');if(b){b.hidden=false;b.textContent='عرض الصورة العريضة';b.onclick=()=>{use360=false;setViewer(f);use360=true;b.hidden=false;b.textContent='العودة لـ 360°';b.onclick=()=>{setViewer(f)}}}
+    const b=$('v360');if(b){b.hidden=false;b.textContent='عرض الصورة العريضة';b.onclick=()=>{use360=false;setViewer(f);use360=true;b.hidden=false;b.textContent='العودة إلى Street View';b.onclick=()=>{setViewer(f)}}}
     return;
   }
-  if(e){const b=$('v360');if(b){b.hidden=false;b.textContent='العودة لـ 360°';b.onclick=()=>setViewer(f)}}
+  if(e){const b=$('v360');if(b){b.hidden=false;b.textContent='العودة إلى Street View';b.onclick=()=>setViewer(f)}}
   if(f.mode==='panorama'){
     const vaov=60,haov=Math.min(360,f.w/f.h*vaov);
     pano=pannellum.viewer('viewer',{type:'equirectangular',panorama:f.img,autoLoad:true,haov:haov,vaov:vaov,minPitch:-vaov/2,maxPitch:vaov/2,minYaw:-haov/2,maxYaw:haov/2,hfov:62,minHfov:30,maxHfov:80,compass:false,autoRotate:-4,showFullscreenCtrl:true,showZoomCtrl:false,mouseZoom:false});
@@ -1048,7 +1062,7 @@ addEventListener('keydown',e=>{if(e.key==='Escape'){$('lightbox').hidden=true;if
 /* credits */
 const cb=$('credits-body');let h='<h4>الصور (ويكيميديا كومنز)</h4><ul>';
 F.forEach(f=>{h+='<li><b>'+f.short+'</b>: <a href="'+f.page+'" target="_blank" rel="noopener">'+f.file.replace('File:','')+'</a> — '+f.author+' — '+f.license+'</li>'});
-h+='</ul><h4>بانوراما 360° (360Cities.net، تضمين رسمي، استخدام غير تجاري)</h4><ul>';Object.keys(E360).forEach(k=>{const e=E360[k],f=F.find(x=>x.id===k);h+='<li><b>'+f.short+'</b>: <a href="https://www.360cities.net/image/'+e[0]+'" target="_blank" rel="noopener">'+e[1]+'</a> — '+e[2]+' — 360Cities.net</li>'});h+='</ul><h4>الخريطة والبيانات</h4><ul><li>خريطة الأساس: Esri World Shaded Relief وEsri World Imagery (Esri, USGS, NOAA, Maxar وآخرون)</li><li>حدود مصر: Natural Earth (ملكية عامة)</li><li>Leaflet 1.9.4 (BSD) وPannellum 2.5.6 (MIT) وخط Cairo (OFL)</li></ul><h4>الصوت</h4><ul><li>تعليق صوتي مولَّد بالذكاء الاصطناعي: Microsoft Edge neural TTS (ar-EG-Salma / ar-EG-Shakir)</li></ul><h4>ملاحظات</h4><ul><li>الدلتا والقطارة: صورة عريضة / صورة قمر صناعي وليست 360°. بقية الأماكن لها نسخة 360° مضمّنة، وإذا تعذّر تحميلها تظهر الصورة العريضة.</li><li>مواقع العلامات تقريبية.</li></ul>';
+h+='</ul><h4>صور 360° (Google Street View)</h4><ul><li>تُعرض عبر مشغّل Google Street View المضمَّن (حقوق Google وأصحاب الصور داخل العارض). النيل وسيناء والفرافرة وسيوة والغردقة فقط.</li></ul><h4>الخريطة والبيانات</h4><ul><li>خريطة الأساس: Esri World Shaded Relief وEsri World Imagery (Esri, USGS, NOAA, Maxar وآخرون)</li><li>حدود مصر: Natural Earth (ملكية عامة)</li><li>Leaflet 1.9.4 (BSD) وPannellum 2.5.6 (MIT) وخط Cairo (OFL)</li></ul><h4>الصوت</h4><ul><li>تعليق صوتي مولَّد بالذكاء الاصطناعي: Microsoft Edge neural TTS (ar-EG-Salma / ar-EG-Shakir)</li></ul><h4>ملاحظات</h4><ul><li>الدلتا والصحراء الشرقية والقطارة: صور عريضة (والدلتا صورة قمر صناعي) لعدم وجود Street View هناك. مواقع Street View أقرب نقطة متاحة وليست بالضبط عند العلامة.</li><li>مواقع العلامات تقريبية.</li></ul>';
 cb.innerHTML=h;$('about').onclick=()=>$('credits').showModal();
 /* splash */
 let loaded=false;const t0=Date.now();
