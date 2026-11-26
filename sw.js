@@ -1,5 +1,5 @@
 /* Service Worker — تضاريس مصر. يُولَّد رقم الإصدار والقائمة تلقائيًا من build.py */
-const VERSION = '8bfca3454f';
+const VERSION = 'sv360a1';
 const CACHE = 'egypt-terrain-' + VERSION;
 const CORE = [
   "./",
