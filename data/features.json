@@ -1,0 +1,281 @@
+[
+ {
+  "id": "nile",
+  "ar": "نهر النيل",
+  "en": "River Nile (Aswan)",
+  "lat": 24.0889,
+  "lon": 32.8998,
+  "kind": "نهر",
+  "sub": "مجرى مائي",
+  "text": "النيل هو شريان الحياة في مصر. يدخلها من الجنوب عند أسوان، ويجري شمالًا نحو ألف وخمسمئة كيلومتر حتى البحر المتوسط. على ضفتيه قامت الحضارة المصرية القديمة، وما زال يعيش على شريطه الضيق معظم المصريين. وعند أسوان أقيم السد العالي في ستينيات القرن الماضي، وخلفه تكونت بحيرة ناصر.",
+  "facts": [
+   "يدخل مصر من الجنوب عند أسوان",
+   "نحو ١٥٠٠ كم داخل مصر",
+   "السد العالي وبحيرة ناصر"
+  ],
+  "mode": "panorama",
+  "img": "assets/img/nile.webp",
+  "w": 4000,
+  "h": 910,
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "author": "Marc Ryckaert",
+  "page": "https://commons.wikimedia.org/wiki/File:Aswan_Nile_Panorama_R01.jpg",
+  "file": "File:Aswan Nile Panorama R01.jpg",
+  "audio": {
+   "salma": "assets/audio/nile-salma.mp3",
+   "shakir": "assets/audio/nile-shakir.mp3"
+  },
+  "short": "النيل",
+  "color": "#1f7a8c",
+  "dir": "r",
+  "street360": {
+   "viewpoint": "24.0830,32.8870",
+   "label": "فلوكة في النيل عند أسوان (قرب فندق أولد كاتاراكت)"
+  },
+  "alt": "نهر النيل"
+ },
+ {
+  "id": "delta",
+  "ar": "دلتا النيل",
+  "en": "Nile Delta",
+  "lat": 31.0,
+  "lon": 31.0,
+  "kind": "سهل",
+  "sub": "سهل فيضي",
+  "text": "عند شمال القاهرة يتفرع النيل إلى فرعين، رشيد ودمياط، فيصنع الدلتا، وهي سهل مثلثي الشكل من أخصب أراضي مصر. تنبسط الدلتا نحو البحر المتوسط، وتضم أغلب الأراضي الزراعية في البلاد، وعددًا كبيرًا من السكان.",
+  "facts": [
+   "فرعا رشيد ودمياط",
+   "سهل مثلثي خصب",
+   "تنتهي ببحيرات وسواحل على المتوسط"
+  ],
+  "mode": "image",
+  "img": "assets/img/delta.webp",
+  "w": 1600,
+  "h": 1286,
+  "license": "Public domain",
+  "license_url": "",
+  "author": "MODIS Land Rapid Response Team, NASA GSFC",
+  "page": "https://commons.wikimedia.org/wiki/File:Nile_River_Delta_(MODIS_2024-07-23).jpg",
+  "file": "File:Nile River Delta (MODIS 2024-07-23).jpg",
+  "audio": {
+   "salma": "assets/audio/delta-salma.mp3",
+   "shakir": "assets/audio/delta-shakir.mp3"
+  },
+  "short": "الدلتا",
+  "color": "#2f8f4e",
+  "dir": "r",
+  "street360": null,
+  "alt": "دلتا النيل"
+ },
+ {
+  "id": "sinai",
+  "ar": "جبال سيناء",
+  "en": "Sinai Mountains (Mount Sinai)",
+  "lat": 28.5392,
+  "lon": 33.9751,
+  "kind": "جبال",
+  "sub": "كتلة جبلية جنوبية",
+  "text": "في جنوب شبه جزيرة سيناء ترتفع كتلة جبلية من الصخور النارية الوعرة. فيها جبل موسى، وقرب منه دير سانت كاترين الذي يعود إلى القرن السادس الميلادي، وفيها جبل كاترين، أعلى قمة في مصر، بارتفاع نحو ألفين وستمئة وتسعة وعشرين مترًا.",
+  "facts": [
+   "جبل كاترين أعلى قمة في مصر (٢٦٢٩ م)",
+   "جبل موسى ودير سانت كاترين",
+   "صخور نارية وأودية جافة"
+  ],
+  "mode": "panorama",
+  "img": "assets/img/sinai.webp",
+  "w": 4000,
+  "h": 690,
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "author": "Florian Prischl",
+  "page": "https://commons.wikimedia.org/wiki/File:Panorama_Mount_Sinai_south.jpg",
+  "file": "File:Panorama Mount Sinai south.jpg",
+  "audio": {
+   "salma": "assets/audio/sinai-salma.mp3",
+   "shakir": "assets/audio/sinai-shakir.mp3"
+  },
+  "short": "سيناء",
+  "color": "#8b5e3c",
+  "dir": "r",
+  "street360": {
+   "viewpoint": "28.5392,33.9750",
+   "label": "قمة جبل موسى"
+  },
+  "alt": "جبال سيناء"
+ },
+ {
+  "id": "white",
+  "ar": "الصحراء البيضاء (الصحراء الغربية)",
+  "en": "White Desert (Western Desert)",
+  "lat": 27.3,
+  "lon": 28.15,
+  "kind": "صحراء",
+  "sub": "صحراء غربية",
+  "text": "الصحراء الغربية تغطي نحو ثلثي مساحة مصر. وقرب الفرافرة تقف في الصحراء البيضاء تكوينات طباشيرية بيضاء نحتتها الرياح عبر آلاف السنين، فتشبه الفطر والطيور. وهي اليوم محمية طبيعية.",
+  "facts": [
+   "الصحراء الغربية: نحو ثلثي مساحة مصر",
+   "تكوينات طباشيرية نحتتها الرياح",
+   "قرب واحة الفرافرة"
+  ],
+  "mode": "image",
+  "img": "assets/img/white.webp",
+  "w": 2000,
+  "h": 1333,
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "author": "Vyacheslav Argenberg",
+  "page": "https://commons.wikimedia.org/wiki/File:White_Desert,_Egypt.jpg",
+  "file": "File:White Desert, Egypt.jpg",
+  "audio": {
+   "salma": "assets/audio/white-salma.mp3",
+   "shakir": "assets/audio/white-shakir.mp3"
+  },
+  "short": "الصحراء البيضاء",
+  "color": "#c9962e",
+  "dir": "l",
+  "street360": {
+   "viewpoint": "27.0580,27.9700",
+   "label": "صحراء الفرافرة، قرب الصحراء البيضاء"
+  },
+  "alt": "الصحراء البيضاء (الصحراء الغربية)"
+ },
+ {
+  "id": "eastern",
+  "ar": "الصحراء الشرقية",
+  "en": "Eastern Desert",
+  "lat": 26.1,
+  "lon": 32.9,
+  "kind": "صحراء",
+  "sub": "جبال وأودية",
+  "text": "بين وادي النيل والبحر الأحمر تمتد الصحراء الشرقية، وهي هضبة وجبال بحر أحمر وأودية جافة. أعلى قممها جبل شايب البنات، ونحو ألفين ومئة وسبعة وثمانين مترًا. وهي غنية بالصخور والمعادن، واستُخرج منها الذهب والحجر منذ العصور القديمة.",
+  "facts": [
+   "بين النيل والبحر الأحمر",
+   "جبال البحر الأحمر وجبل شايب البنات (≈٢١٨٧ م)",
+   "ثروة معدنية منذ العصور القديمة"
+  ],
+  "mode": "panorama",
+  "img": "assets/img/eastern.webp",
+  "w": 4000,
+  "h": 1123,
+  "license": "Public domain",
+  "license_url": "",
+  "author": "غير مذكور في ويكيميديا",
+  "page": "https://commons.wikimedia.org/wiki/File:Eastern_Desert_peaks.jpg",
+  "file": "File:Eastern Desert peaks.jpg",
+  "audio": {
+   "salma": "assets/audio/eastern-salma.mp3",
+   "shakir": "assets/audio/eastern-shakir.mp3"
+  },
+  "short": "الصحراء الشرقية",
+  "color": "#b8742f",
+  "dir": "l",
+  "street360": null,
+  "alt": "الصحراء الشرقية"
+ },
+ {
+  "id": "redsea",
+  "ar": "ساحل البحر الأحمر",
+  "en": "Red Sea Coast (Hurghada)",
+  "lat": 27.2579,
+  "lon": 33.8116,
+  "kind": "ساحل",
+  "sub": "سواحل وشعاب مرجانية",
+  "text": "على ساحل البحر الأحمر تلتقي الجبال بالمياه الصافية. هنا الشعاب المرجانية من أغنى مناطق الغوص في العالم، وأشهر مدنها الغردقة وشرم الشيخ ومرسى علم. وفي أقصى جنوب سيناء يقع رأس محمد، محمية بحرية معروفة.",
+  "facts": [
+   "شعاب مرجانية وغوص عالمي",
+   "الغردقة ومرسى علم",
+   "محمية رأس محمد في جنوب سيناء"
+  ],
+  "mode": "image",
+  "img": "assets/img/redsea.webp",
+  "w": 2000,
+  "h": 1333,
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Marc Ryckaert",
+  "page": "https://commons.wikimedia.org/wiki/File:Red_Sea_Hurghada_R05.jpg",
+  "file": "File:Red Sea Hurghada R05.jpg",
+  "audio": {
+   "salma": "assets/audio/redsea-salma.mp3",
+   "shakir": "assets/audio/redsea-shakir.mp3"
+  },
+  "short": "البحر الأحمر",
+  "color": "#13a3b5",
+  "dir": "r",
+  "street360": {
+   "viewpoint": "28.5720,34.5370",
+   "label": "البلو هول، دهب، على خليج العقبة (البحر الأحمر)"
+  },
+  "alt": "ساحل البحر الأحمر"
+ },
+ {
+  "id": "siwa",
+  "ar": "واحة سيوة",
+  "en": "Siwa Oasis",
+  "lat": 29.2032,
+  "lon": 25.5195,
+  "kind": "واحة",
+  "sub": "واحة صحراوية",
+  "text": "في أقصى الغرب قرب الحدود الليبية تقع واحة سيوة، وسط الصحراء، وأرضها أخفض من سطح البحر. فيها عيون وبحيرات ملحية ونخيل وزيتون، ومعبد الوحي الذي زاره الإسكندر الأكبر. ويتحدث أهلها اللغة السيوية الأمازيغية.",
+  "facts": [
+   "أخفض من مستوى سطح البحر",
+   "بحيرات ملحية وعيون ونخيل",
+   "معبد الوحي وزيارة الإسكندر الأكبر"
+  ],
+  "mode": "image",
+  "img": "assets/img/siwa.webp",
+  "w": 2000,
+  "h": 1500,
+  "license": "Public domain",
+  "license_url": "",
+  "author": "ولاء",
+  "page": "https://commons.wikimedia.org/wiki/File:Siwa_Salt_pools07.jpg",
+  "file": "File:Siwa Salt pools07.jpg",
+  "audio": {
+   "salma": "assets/audio/siwa-salma.mp3",
+   "shakir": null
+  },
+  "short": "سيوة",
+  "color": "#5b9a3a",
+  "dir": "l",
+  "street360": {
+   "viewpoint": "29.2032,25.5195",
+   "label": "صحراء سيوة"
+  },
+  "alt": "واحة سيوة"
+ },
+ {
+  "id": "qattara",
+  "ar": "منخفض القطارة",
+  "en": "Qattara Depression",
+  "lat": 29.35,
+  "lon": 27.55,
+  "kind": "منخفض",
+  "sub": "منخفض صحراوي",
+  "text": "منخفض القطارة في الصحراء الغربية من أعمق مناطق مصر، ويصل أخفض نقطة فيه إلى نحو مئة وثلاثة وثلاثين مترًا تحت مستوى سطح البحر. مساحته كبيرة جدًا، وأرضه سبخات وكثبان رملية، وهو مهجور تقريبًا من السكان.",
+  "facts": [
+   "أخفض نقطة في مصر (≈−١٣٣ م)",
+   "سبخات وكثبان رملية",
+   "في شمال الصحراء الغربية"
+  ],
+  "mode": "image",
+  "img": "assets/img/qattara.webp",
+  "w": 2000,
+  "h": 1333,
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "author": "Marc Ryckaert",
+  "page": "https://commons.wikimedia.org/wiki/File:Qattara_Depression_R02.jpg",
+  "file": "File:Qattara Depression R02.jpg",
+  "audio": {
+   "salma": "assets/audio/qattara-salma.mp3",
+   "shakir": "assets/audio/qattara-shakir.mp3"
+  },
+  "short": "القطارة",
+  "color": "#a4553d",
+  "dir": "r",
+  "street360": null,
+  "alt": "منخفض القطارة"
+ }
+]

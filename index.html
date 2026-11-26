@@ -1,1 +1,65 @@
-<!doctype html><meta charset=utf-8><meta http-equiv=refresh content="0;url=1-index.html"><a href="1-index.html">open</a>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#123a35">
+<meta name="description" content="خريطة تفاعلية لتضاريس مصر: النيل والدلتا وسيناء والصحراء والواحات، بالصوت والصور والبانوراما، وتعمل بدون إنترنت.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="تضاريس مصر | خريطة تفاعلية">
+<meta property="og:description" content="استكشف تضاريس مصر بالصوت والصور والبانوراما.">
+<title>تضاريس مصر | خريطة تفاعلية</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/cairo-arabic.woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="splash"><div class="sp-box"><div class="sp-ring"></div><h1>تضاريس مصر</h1><p>جاري تحميل الخريطة…</p></div></div>
+<noscript><div id="fatal" style="display:grid"><div><h2>تضاريس مصر</h2><p>الخريطة تحتاج تفعيل JavaScript.</p></div></div></noscript>
+<div id="fatal" hidden><div><h2>تعذّر تحميل بيانات الخريطة</h2><p>افتح الصفحة من رابط الموقع (GitHub Pages) وليس كملف مباشر من الجهاز.</p><button id="retry" type="button">إعادة المحاولة</button></div></div>
+<div id="map" aria-label="خريطة مصر"></div>
+<header id="top">
+  <div class="brand"><span class="logo" aria-hidden="true">◭</span><div><b>تضاريس مصر</b><small>خريطة تفاعلية بالصوت والصور</small></div></div>
+  <div class="top-actions">
+    <div class="seg" id="basemap" role="group" aria-label="نوع الخريطة"><button data-b="relief" class="on" type="button" aria-pressed="true">تضاريس</button><button data-b="sat" type="button" aria-pressed="false">قمر صناعي</button></div>
+    <button id="about" class="icon-btn" type="button" aria-label="المصادر والتراخيص">i</button>
+  </div>
+</header>
+<div id="net" hidden role="status">بدون إنترنت — تعمل الخريطة المبسّطة المحفوظة</div>
+<div id="hint">اضغط على علامة لاستكشاف المنطقة</div>
+<nav id="chips" aria-label="المناطق"></nav>
+<section id="sheet" aria-live="polite" hidden>
+  <button id="grab" type="button" aria-label="تكبير أو تصغير"><i></i></button>
+  <button id="close" type="button" aria-label="إغلاق">&times;</button>
+  <div class="scroller">
+    <div class="hero"><div id="viewer"></div><div class="hero-fade"></div>
+      <div class="hero-title"><span id="d-kind" class="kind"></span><h2 id="d-ar"></h2><div id="d-en" dir="ltr"></div></div>
+      <div id="viewer-badge"></div></div>
+    <div class="body">
+      <div class="player">
+        <button id="play" type="button" aria-label="تشغيل الشرح"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path id="play-ic" d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+        <div class="pl-mid"><input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="موضع التشغيل"><div class="pl-row"><span id="time">0:00</span><div class="seg small" id="voice" role="group" aria-label="الصوت"><button data-v="salma" class="on" type="button" aria-pressed="true">سلمى</button><button data-v="shakir" type="button" aria-pressed="false">شاكر</button></div></div></div>
+      </div>
+      <p id="note" class="note" hidden></p>
+      <audio id="audio" preload="none"></audio>
+      <p id="d-text"></p>
+      <ul id="d-facts"></ul>
+      <a id="link360" class="link360" target="_blank" rel="noopener noreferrer" hidden>شاهد المكان 360° على Google Street View ↗</a>
+      <p id="note360" class="note" hidden></p>
+      <div class="loc"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg><span>الموقع التقريبي: <bdi id="d-loc" dir="ltr"></bdi></span></div>
+      <details class="credit"><summary>حقوق الصورة والترخيص</summary><div id="d-credit"></div></details>
+      <div class="pager"><button id="prev" type="button">&rarr; السابق</button><button id="next" type="button">التالي &larr;</button></div>
+    </div>
+  </div>
+</section>
+<div id="lightbox" hidden><button type="button" id="lb-close" aria-label="إغلاق">&times;</button><img alt=""></div>
+<div id="toast" hidden role="status"></div>
+<dialog id="credits"><form method="dialog"><button class="x" aria-label="إغلاق">&times;</button></form><h3>المصادر والتراخيص</h3><div id="credits-body"></div></dialog>
+<script defer src="vendor/leaflet.js"></script>
+<script defer src="vendor/pannellum.js"></script>
+<script defer src="js/app.js"></script>
+</body>
+</html>
