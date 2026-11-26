@@ -129,7 +129,7 @@ function start(F, ring) {
     const sb = $('basemap').querySelector('[data-b=sat]');
     sb.disabled = !on; sb.title = on ? '' : 'يحتاج إنترنت';
     if (!on && basemap === 'sat') setBasemap('relief', true);
-    if (cur) update360(cur);
+    if (cur) { update360(cur); setViewer(cur); }
   }
   addEventListener('online', netState); addEventListener('offline', netState);
 
@@ -204,10 +204,34 @@ function start(F, ring) {
     img.src = f.img;
     v.appendChild(img);
   }
+  let use360 = true;
   function setViewer(f) {
     const v = $('viewer'), bd = $('viewer-badge');
+    const sw = $('v360');
     if (pano) { try { pano.destroy(); } catch (e) { /* تجاهل */ } pano = null; }
-    v.replaceChildren(); bd.style.opacity = 1;
+    v.replaceChildren(); bd.style.opacity = 1; bd.style.display = '';
+    sw.hidden = true; sw.onclick = null;
+    const s = f.street360;
+    if (s && use360 && navigator.onLine) {
+      const box = document.createElement('div'); box.className = 'e360';
+      const ifr = document.createElement('iframe');
+      ifr.src = 'https://www.google.com/maps?q=&layer=c&cbll=' + s.viewpoint + '&cbp=11,0,0,0,0&output=svembed';
+      ifr.setAttribute('frameborder', '0');
+      ifr.setAttribute('allowfullscreen', '');
+      ifr.setAttribute('loading', 'lazy');
+      ifr.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+      ifr.title = 'منظر 360° من Google Street View: ' + s.label;
+      box.appendChild(ifr);
+      v.appendChild(box);
+      bd.style.display = 'none';
+      sw.hidden = false; sw.textContent = 'عرض الصورة العريضة';
+      sw.onclick = () => { use360 = false; setViewer(f); use360 = true; };
+      return;
+    }
+    if (s && navigator.onLine) {
+      sw.hidden = false; sw.textContent = 'العودة إلى Street View';
+      sw.onclick = () => setViewer(f);
+    }
     if (f.mode === 'panorama' && window.pannellum) {
       const vaov = 60, haov = Math.min(360, f.w / f.h * vaov);
       try {
